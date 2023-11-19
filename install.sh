@@ -81,7 +81,7 @@ sudo nala install skypeforlinux
 
 # Install Intellij IDEA
 wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5.tar.gz"
-sudo tar -xzf ideaIU-*.tar.gz -C 
+sudo tar -xzf ideaIU-*.tar.gz
 
 # Install Docker
 # Add Docker's official GPG key:
@@ -101,8 +101,8 @@ sudo nala install docker-ce docker-ce-cli containerd.io docker-buildx-plugin doc
 
 # Install Postman
 wget "https://dl.pstmn.io/download/latest/linux_64"
-sudo tar -xzf postman-*.tar.gz -C
-echo [Desktop Entry] Encoding=UTF-8 Name=Postman Exec=Postman/app/Postman %U Icon=Postman/app/resources/app/assets/icon.png Terminal=false Type=Application Categories=Development; | sudo tee $builddir/.local/share/applications/Postman.desktop > /dev/null
+sudo tar -xzf postman-*.tar.gz
+echo "[Desktop Entry] Encoding=UTF-8 Name=Postman Exec=Postman/app/Postman %U Icon=Postman/app/resources/app/assets/icon.png Terminal=false Type=Application Categories=Development;" | sudo tee $builddir/.local/share/applications/Postman.desktop > /dev/null
 
 # Enable graphical login and change target from CLI to GUI
 systemctl enable lightdm
