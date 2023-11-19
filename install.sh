@@ -80,7 +80,7 @@ sudo apt update
 sudo apt install skypeforlinux
 
 # Install Intellij IDEA
-wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5-aarch64.tar.gz"
+wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5.tar.gz"
 sudo tar -xzf ideaIU-*.tar.gz -C 
 
 # Install Docker
