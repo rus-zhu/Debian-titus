@@ -80,8 +80,8 @@ sudo nala update
 sudo nala install skypeforlinux
 
 # Install Intellij IDEA
-wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5.tar.gz"
-sudo tar -xzf ideaIU-*.tar.gz
+# wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5.tar.gz"
+# sudo tar -xzf ideaIU-*.tar.gz
 
 # Install Docker
 # Add Docker's official GPG key:
