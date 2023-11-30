@@ -70,14 +70,14 @@ cd $builddir
 mkdir installation
 cd installation
 wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
-sudo apt install ./discord.deb
+nala install ./discord.deb
 
 # Install Skype
-sudo apt install software-properties-common apt-transport-https curl ca-certificates
+nala install software-properties-common apt-transport-https curl ca-certificates
 curl -fsSL https://repo.skype.com/data/SKYPE-GPG-KEY | sudo gpg --dearmor | sudo tee /usr/share/keyrings/skype.gpg > /dev/null
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/skype.gpg] https://repo.skype.com/deb stable main | sudo tee /etc/apt/sources.list.d/skype.list
-sudo nala update
-sudo nala install skypeforlinux
+nala update
+nala install skypeforlinux
 
 # Install Intellij IDEA
 # wget "https://download.jetbrains.com/idea/ideaIU-2023.2.5.tar.gz"
@@ -85,23 +85,23 @@ sudo nala install skypeforlinux
 
 # Install Docker
 # Add Docker's official GPG key:
-sudo nala update
-sudo nala install ca-certificates curl gnupg
-sudo install -m 0755 -d /etc/apt/keyrings
+nala update
+nala install ca-certificates curl gnupg
+install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+chmod a+r /etc/apt/keyrings/docker.gpg
 
 # Add the repository to Apt sources:
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo nala update
-sudo nala install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+nala update
+nala install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Install Postman
 wget "https://dl.pstmn.io/download/latest/linux_64"
-sudo tar -xzf postman-*.tar.gz
+tar -xzf postman-*.tar.gz
 echo "[Desktop Entry] Encoding=UTF-8 Name=Postman Exec=Postman/app/Postman %U Icon=Postman/app/resources/app/assets/icon.png Terminal=false Type=Application Categories=Development;" | sudo tee $builddir/.local/share/applications/Postman.desktop > /dev/null
 
 # Enable graphical login and change target from CLI to GUI
@@ -109,10 +109,10 @@ systemctl enable lightdm
 systemctl set-default graphical.target
 
 # Beautiful bash
-git clone https://github.com/ChrisTitusTech/mybash
-cd mybash
-bash setup.sh
-cd $builddir
+# git clone https://github.com/ChrisTitusTech/mybash
+# cd mybash
+# bash setup.sh
+# cd $builddir
 
 # Use nala
 bash scripts/usenala
